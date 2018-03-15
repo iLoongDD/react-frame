@@ -25,10 +25,11 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "style-loader": "^0.20.2",
-    "webpack": "^3.9.0",
     "webpack-dev-server": "^2.11.2"
   },
   "dependencies": {
+    "react-hot-loader": "^4.0.0",
+    "webpack": "^3.9.0",
     "antd": "^3.2.3",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",

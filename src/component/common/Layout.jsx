@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { Layout, Menu, Icon } from 'antd';
-import { Link, Route, Redirect, Switch } from 'react-router-dom';
+import React from 'react';
+import { Layout, Icon } from 'antd';
+import { Route, Switch } from 'react-router-dom';
 import './common.css';
 import Menus from './Menu';
 import Test from '../test/test';
 import Hello from '../hello';
 
-const { Header, Sider, Content, Footer } = Layout;
+const { Header, Content, Footer } = Layout;
 
 class Layouts extends React.Component {
   state = {
