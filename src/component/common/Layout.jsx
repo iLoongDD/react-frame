@@ -3,8 +3,8 @@ import { Layout, Icon } from 'antd';
 import { Route, Switch } from 'react-router-dom';
 import './common.css';
 import Menus from './Menu';
-import Test from '../test/test';
 import Hello from '../hello';
+import TestTableView from '../test/testTableView';
 
 const { Header, Content, Footer } = Layout;
 
@@ -32,7 +32,7 @@ class Layouts extends React.Component {
           <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 680 }}>
             <Switch>
               <Route path="/" exact component={Hello} />
-              <Route path="/test" component={Test} />
+              <Route path="/test" component={TestTableView} />
             </Switch>
           </Content>
           <Footer style={{ textAlign: 'center' }}>

@@ -4,7 +4,7 @@ export default class Hello extends Component {
   render() {
     return (
       <div>
-        Hello,React!Up!
+        Hello,React!Up!6666
       </div>
     );
   }

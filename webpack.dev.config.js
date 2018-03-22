@@ -50,4 +50,5 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
+  devtool: 'inline-source-map',
 };

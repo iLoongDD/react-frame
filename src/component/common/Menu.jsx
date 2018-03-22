@@ -31,14 +31,14 @@ class Menus extends Component {
           </Menu.Item>
           <Menu.Item key="2">
             <Icon type="desktop" />
-            <Link to="/test">测试</Link >
+            <Link to="/ee">正文</Link >
           </Menu.Item>
           <Menu.Item key="3">
             <Icon type="inbox" />
             <span>Option 3</span>
           </Menu.Item>
-          <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
-            <Menu.Item key="5">Option 5</Menu.Item>
+          <SubMenu key="sub1" title={<span><Icon type="mail" /><span>测试</span></span>}>
+            <Menu.Item key="5"><Link to="/test">列表</Link ></Menu.Item>
             <Menu.Item key="6">Option 6</Menu.Item>
             <Menu.Item key="7">Option 7</Menu.Item>
             <Menu.Item key="8">Option 8</Menu.Item>
