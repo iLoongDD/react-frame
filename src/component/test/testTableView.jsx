@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import TestTable from './testTable';
+import './test.less';
 import {
   onViewInit,
   onListSearch,
@@ -23,9 +24,12 @@ class TestTableView extends Component {
   render() {
     const { testList } = this.props;
     return (
-      <TestTable
-        testList={testList}
-      />
+      <div>
+        <p className="test">我就是测试一下less配置</p>
+        <TestTable
+          testList={testList}
+        />
+      </div>
     );
   }
 }
