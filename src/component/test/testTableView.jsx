@@ -6,6 +6,7 @@ import './test.less';
 import {
   onViewInit,
   onListSearch,
+  onListDelete,
 } from './redux/actions';
 import {
   testListSelectors,
@@ -15,6 +16,7 @@ class TestTableView extends Component {
   static propTypes = {
     onViewInit: PropTypes.func.isRequired,
     onSearch: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired,
     testList: PropTypes.array.isRequired,
   };
   componentWillMount() {
@@ -22,12 +24,13 @@ class TestTableView extends Component {
     this.props.onSearch();
   }
   render() {
-    const { testList } = this.props;
+    const { testList, onDelete } = this.props;
     return (
       <div>
         <p className="test">我就是测试一下less配置</p>
         <TestTable
           testList={testList}
+          onDelete={onDelete}
         />
       </div>
     );
@@ -43,6 +46,7 @@ function mapStateToProps(state, props) {
 const mapDispatchToProps = {
   onViewInit,
   onSearch: onListSearch,
+  onDelete: onListDelete,
 };
 
 TestTableView = connect(mapStateToProps, mapDispatchToProps)(TestTableView);

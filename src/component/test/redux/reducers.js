@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import {
   TEST_VIEW_INIT,
   TEST_LIST_SEARCH,
+  TEST_LIST_DELETE,
 } from './constants';
 
 export function listData(state = [], action) {
@@ -9,8 +10,14 @@ export function listData(state = [], action) {
     case TEST_VIEW_INIT:
       return state;
     case TEST_LIST_SEARCH: {
-      console.log('action', action);
       return action.payload;
+    }
+    case TEST_LIST_DELETE: {
+      const dataId = action.payload;
+      const newListDate = state.filter((value) => {
+        return value.nameId !== dataId;
+      });
+      return newListDate;
     }
     default:
       return state;

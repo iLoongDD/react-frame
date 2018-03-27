@@ -3,11 +3,13 @@ import { createAction } from 'redux-actions';
 import {
   TEST_LIST_SEARCH,
   TEST_VIEW_INIT,
+  TEST_LIST_DELETE,
 } from './constants';
 
 
 const onviewInitAction = createAction(TEST_VIEW_INIT);
 const onListSearchAction = createAction(TEST_LIST_SEARCH);
+const onListDeleteAction = createAction(TEST_LIST_DELETE);
 
 export function onViewInit() {
   return (dispatch) => {
@@ -25,5 +27,11 @@ export function onListSearch() {
   ];
   return (dispatch) => {
     dispatch(onListSearchAction(listData));
+  };
+}
+
+export function onListDelete(nameId) {
+  return (dispatch) => {
+    dispatch(onListDeleteAction(nameId));
   };
 }

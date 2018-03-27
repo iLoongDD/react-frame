@@ -1,3 +1,4 @@
 
 export const TEST_VIEW_INIT = 'TEST_VIEW_INIT';
 export const TEST_LIST_SEARCH = 'TEST_LIST-SEARCH';
+export const TEST_LIST_DELETE = 'TEST_LIST_DELETE';
