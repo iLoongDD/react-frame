@@ -27,7 +27,6 @@ class TestTableView extends Component {
     const { testList, onDelete } = this.props;
     return (
       <div>
-        <p className="test">我就是测试一下less配置</p>
         <TestTable
           testList={testList}
           onDelete={onDelete}

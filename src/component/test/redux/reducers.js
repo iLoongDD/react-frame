@@ -15,7 +15,7 @@ export function listData(state = [], action) {
     case TEST_LIST_DELETE: {
       const dataId = action.payload;
       const newListDate = state.filter((value) => {
-        return value.nameId !== dataId;
+        return value.user_id !== dataId;
       });
       return newListDate;
     }

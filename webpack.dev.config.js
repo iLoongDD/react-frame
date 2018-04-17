@@ -14,7 +14,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: 'http://zing.com:3030',
   },
   module: {
     rules: [
@@ -46,9 +46,16 @@ module.exports = {
   devServer: {
     hot: true,
     contentBase: path.join(__dirname, './dist'),
-    historyApiFallback: true,
-    host: '0.0.0.0',
-    // port: 3000,
+    historyApiFallback: true, // 页面出错不会弹出404页面
+    host: 'zing.com', // 默认localhost,如果想服务器在外部访问，设置为0.0.0.0
+    port: 3030, // 默认8080
+    open: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000/',
+        pathRewrite: { '^/api': '' },
+      },
+    },
   },
   plugins: [
     new webpack.NamedModulesPlugin(),

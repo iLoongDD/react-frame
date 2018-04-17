@@ -19,7 +19,7 @@ export default class TestTable extends Component {
       okType: 'danger',
       cancelText: '否',
       onOk() {
-        _this.props.onDelete(record.nameId);
+        _this.props.onDelete(record.user_id);
       },
       onCancel() {
       },
@@ -28,17 +28,29 @@ export default class TestTable extends Component {
   render() {
     const { testList } = this.props;
     const columns = [{
-      title: '姓名id',
-      dataIndex: 'nameId',
-      key: 'nameId',
+      title: '工号',
+      dataIndex: 'user_id',
+      key: 'user_id',
     }, {
       title: '姓名',
-      dataIndex: 'name',
-      key: 'name',
+      dataIndex: 'user_name',
+      key: 'user_name',
     }, {
-      title: '水果',
-      dataIndex: 'fruit',
-      key: 'fruit',
+      title: '性别',
+      dataIndex: 'sex',
+      key: 'sex',
+    }, {
+      title: '联系号码',
+      dataIndex: 'phone',
+      key: 'phone',
+    }, {
+      title: '岗位',
+      dataIndex: 'role',
+      key: 'role',
+    }, {
+      title: '添加时间',
+      dataIndex: 'createTime',
+      key: 'createTime',
     }, {
       title: '操作',
       dataIndex: 'operation',
@@ -50,7 +62,7 @@ export default class TestTable extends Component {
       },
     }];
     return (
-      <Table columns={columns} dataSource={testList} />
+      <Table columns={columns} dataSource={testList} rowkey={record => record.user_id} />
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'isomorphic-fetch';
 import { createAction } from 'redux-actions';
 
 import {
@@ -26,7 +27,17 @@ export function onListSearch() {
     { key: '06', nameId: '06', name: '口味', fruit: 'apple' },
   ];
   return (dispatch) => {
-    dispatch(onListSearchAction(listData));
+    fetch('api/users/queryUsers', {
+      method: 'GET',
+    }).then((resp) => {
+      if (resp.status === 200) {
+        return resp.json();
+      }
+    }).then((data) => {
+      dispatch(onListSearchAction(data));
+    }).catch((err) => {
+      console.log(err);
+    });
   };
 }
 
